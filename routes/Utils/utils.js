@@ -39,11 +39,12 @@ const Utils = {
       });
       if (user.AccessToken == req.cookies["AuthAccessToken"]) {
         res.locals.user = user;
-        res.redirect("/");
+        res.redirect("/panel");
       } else next();
     }
     //new Login
     else next();
   },
+  Roles: { Student: 0, Teacher: 1, God: 2 },
 };
 module.exports = Utils;
